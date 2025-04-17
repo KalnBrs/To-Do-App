@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="style.css" />
+  </head>
+  <body class="margin">
+    <div
+      class="Overlay hidden"
+      id="overlay"></div>
+    <div>
+      <form
+        class="editForm hidden"
+        id="editForm">
+        <div>
+          <label for="text">Task:</label>
+          <input
+            type="text"
+            id="newTask" />
+          <input
+            type="radio"
+            name="status"
+            id="statusToDO"
+            value="To Do"
+            checked />
+          <label for="toDo">To Do</label>
+          <input
+            type="radio"
+            name="status"
+            id="statusInProgress"
+            value="In Progress" />
+          <label for="inProgress">In Progress</label>
+          <input
+            type="radio"
+            name="status"
+            id="statusCompleted"
+            value="Completed" />
+          <label for="completed">Completed</label>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div>
+      <h1>To Do App</h1>
+
+      <div class="search">
+        <input
+          type="text"
+          id="search"
+          name="search"
+          placeholder="Search" />
+      </div>
+
+      <!-- <hr /> -->
+
+      <table
+        id="elements"
+        class="elements">
+        <tr class="header last">
+          <th>#</th>
+          <th class="task">Task</th>
+          <th class="status">Status</th>
+          <th class="edit">Edit</th>
+          <th class="remove">Remove</th>
+        </tr>
+      </table>
+
+      <input
+        type="image"
+        src="icons/addition-thick-symbol.png"
+        id="add"
+        onclick="popUpAdd()" />
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --gray: #495867;
+  --darkBlue: #577399;
+  --blue: #BDD5EA;
+  --white: #F7F7FF;
+  --red: #FE5F55;
+  --green: #68D89B;
+  --yellow: #F1DB4B;
+}
+
+body {
+  background-color: var(--white);
+}
+
+h1 {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  margin-top: 1rem;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+tr {
+  justify-content: space-between;
+  border-bottom: var(--gray) 1px solid;
+  margin: 1rem 0;
+  padding-bottom: .7rem;
+}
+
+tr.header {
+  border-bottom: var(--gray) 3px solid;
+}
+
+th {
+  text-align: centerx;
+}
+
+td, th {
+  border-bottom: 1px solid var(--gray);
+  padding: 1em 1.5em; /* ← Add vertical and horizontal padding */
+  text-align: center;
+}
+
+td {
+  padding: 1em 1.5em;
+  text-align: center;
+}
+
+td.status {
+  text-align: center; /* center inside the cell */
+}
+
+td.status span{
+  display: inline-block; /* makes it wrap its content */
+  padding: 0.4em 0.7em;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap; /* avoids line break */
+}
+
+
+.edit {
+  margin-right: 1em;
+}
+
+.remove {
+  padding: 0;
+}
+
+.margin {
+  margin-left: 10em;
+  margin-right: 10em;
+}
+
+@media (width <= 1200px) {
+  .margin {
+    margin-left: 2em;
+    margin-right: 2em;
+
+  }
+}
+
+.search {
+  align-items: center;
+}
+
+input[type=text] {
+  display: block;
+  width: 100%;
+  border: var(--gray), 1px, solid;
+  margin: auto;
+}
+
+input[type=image] {
+  width: 1rem;
+}
+
+#add {
+  width: 1rem;
+  margin: 1rem;
+  margin-left: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.Overlay {
+  position: absolute; z-index: 3; opacity: 0.5; filter: alpha(opacity = 50); top: 0; bottom: 0; left: 0; right: 0; width: 100%; height: 100%; background-color: Black; color: White;
+}
+
+.editForm {
+  width: 50%;
+  background-color: white;
+  font-size: 40px;
+  /* Positioned relative to the nearest positioned ancestor */
+  position: absolute;
+  /* Positioned in the right spot */
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  border-radius: 1.5em;
+}
+
+.editForm div {
+  padding: 1.5em;
+}
+
+/* Status Design */
+#toDo {
+  border: var(--red) 1.5px solid;
+  color: var(--red);
+  border-radius: 4px;
+}
+
+#inProgress {
+  border: var(--yellow) 1.5px solid;
+  color: var(--yellow);
+  border-radius: 4px;
+}
+
+#completed {
+  border: var(--green) 1.5px solid;
+  color: var(--green);
+  border-radius: 4px;
+}
