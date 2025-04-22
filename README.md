@@ -39,6 +39,8 @@ Simply open the index.html file in your browser.
 ✅ No dependencies
 ✅ Works offline
 
+---
+
 ## 🗂️ Project Structure
 css
 ```
@@ -49,15 +51,21 @@ css
 └── icons/            → Pencil and delete icons
 ```
 
+---
+
 ## 🛠 Future Improvements
 - 🔁 Drag-and-drop task reordering
 - 📅 Add due dates and reminders
 - 🌒 Dark mode
 - 📤 Export/import task lists
 
+---
+
 ## ⚠ Known Limitations
 - 📱 No mobile-specific design optimizations yet
 - 🔄 No undo functionality for edits or deletions
+
+---
 
 ## 📃 License
 MIT License
