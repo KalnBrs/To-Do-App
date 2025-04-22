@@ -1,5 +1,8 @@
+/* Reset & Base Styles */
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -10,146 +13,178 @@
   --red: #FE5F55;
   --green: #68D89B;
   --yellow: #F1DB4B;
+  --border-radius: 10px;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --transition: all 0.2s ease-in-out;
 }
 
 body {
   background-color: var(--white);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  color: var(--gray);
 }
 
 h1 {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
+/* Table Styles */
 table {
   width: 100%;
-  margin-top: 1rem;
-  table-layout: fixed;
   border-collapse: collapse;
+  background-color: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
-tr {
-  justify-content: space-between;
-  border-bottom: var(--gray) 1px solid;
-  margin: 1rem 0;
-  padding-bottom: .7rem;
+th, td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--gray);
 }
 
 tr.header {
-  border-bottom: var(--gray) 3px solid;
+  background-color: var(--darkBlue);
+  color: white;
 }
 
-th {
-  text-align: centerx;
+tr:last-child td {
+  border-bottom: none;
 }
 
-td, th {
-  border-bottom: 1px solid var(--gray);
-  padding: 1em 1.5em; /* ← Add vertical and horizontal padding */
-  text-align: center;
-}
-
-td {
-  padding: 1em 1.5em;
-  text-align: center;
-}
-
-td.status {
-  text-align: center; /* center inside the cell */
-}
-
-td.status span{
-  display: inline-block; /* makes it wrap its content */
+/* Task Status Tags */
+td.status span {
+  display: inline-block;
   padding: 0.4em 0.7em;
   border-radius: 4px;
   font-weight: bold;
-  text-align: center;
-  white-space: nowrap; /* avoids line break */
+  white-space: nowrap;
+  font-size: 0.9rem;
 }
 
-
-.edit {
-  margin-right: 1em;
+#toDo {
+  border: 1.5px solid var(--red);
+  color: var(--red);
 }
 
-.remove {
-  padding: 0;
+#inProgress {
+  border: 1.5px solid var(--yellow);
+  color: var(--yellow);
 }
 
-.margin {
-  margin-left: 10em;
-  margin-right: 10em;
+#completed {
+  border: 1.5px solid var(--green);
+  color: var(--green);
 }
 
-@media (width <= 1200px) {
-  .margin {
-    margin-left: 2em;
-    margin-right: 2em;
-
-  }
-}
-
-.search {
-  align-items: center;
-}
-
-input[type=text] {
-  display: block;
+/* Search Input */
+.search input[type="text"] {
   width: 100%;
-  border: var(--gray), 1px, solid;
-  margin: auto;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border: 1px solid var(--gray);
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
 }
 
-input[type=image] {
-  width: 1rem;
-}
-
+/* Add Button */
 #add {
-  width: 1rem;
-  margin: 1rem;
-  margin-left: 0;
+  width: 2rem;
+  height: 2rem;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#add:hover {
+  transform: scale(1.1);
+}
+
+/* Edit & Delete Icons */
+input[type="image"] {
+  width: 1.5rem;
+  transition: var(--transition);
+}
+
+input[type="image"]:hover {
+  transform: scale(1.15);
+}
+
+/* Overlay & Popup */
+.Overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 3;
 }
 
 .hidden {
   display: none;
 }
 
-.Overlay {
-  position: absolute; z-index: 3; opacity: 0.5; filter: alpha(opacity = 50); top: 0; bottom: 0; left: 0; right: 0; width: 100%; height: 100%; background-color: Black; color: White;
-}
-
 .editForm {
-  width: 50%;
-  background-color: white;
-  font-size: 40px;
-  /* Positioned relative to the nearest positioned ancestor */
-  position: absolute;
-  /* Positioned in the right spot */
-  top: 30%;
-  left: 50%;
+  position: fixed;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   z-index: 4;
-  border-radius: 1.5em;
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 500px;
+  box-shadow: var(--shadow);
 }
 
-.editForm div {
-  padding: 1.5em;
+.editForm label {
+  margin-right: 0.5rem;
+  font-weight: bold;
 }
 
-/* Status Design */
-#toDo {
-  border: var(--red) 1.5px solid;
-  color: var(--red);
-  border-radius: 4px;
+.editForm input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  border: 1px solid var(--gray);
+  border-radius: var(--border-radius);
 }
 
-#inProgress {
-  border: var(--yellow) 1.5px solid;
-  color: var(--yellow);
-  border-radius: 4px;
+.editForm input[type="radio"] {
+  margin-left: 1rem;
 }
 
-#completed {
-  border: var(--green) 1.5px solid;
-  color: var(--green);
-  border-radius: 4px;
+.editForm button {
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--darkBlue);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.editForm button:hover {
+  background-color: var(--gray);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .margin {
+    margin: 0 1em;
+  }
+
+  th, td {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .editForm {
+    font-size: 1rem;
+  }
 }
