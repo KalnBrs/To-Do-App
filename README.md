@@ -42,8 +42,7 @@ Simply open the index.html file in your browser.
 ---
 
 ## 🗂️ Project Structure
-css
-```
+``` 
 📁 todo-app/
 ├── index.html        → Main HTML file
 ├── style.css         → Styling and layout
