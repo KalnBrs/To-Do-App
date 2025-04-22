@@ -35,9 +35,9 @@ git clone https://github.com/your-username/todo-app.git
 ### 2. Open the App
 Simply open the index.html file in your browser.
 
-✅ No build steps
-✅ No dependencies
-✅ Works offline
+- ✅ No build steps
+- ✅ No dependencies
+- ✅ Works offline
 
 ---
 
